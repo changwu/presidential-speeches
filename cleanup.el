@@ -1,4 +1,7 @@
-;;;; Emacs Lisp to help
+;;;; Emacs Lisp to help remove raw HTML from Presidential speeches. ;;;;
+
+;;; See the difference from commit 234f92e33 to commit addac276a for
+;;; an example of what this code does.
 
 (defun strip-common-html-from-speech ()
   "Clean common HTML from a raw Presidential speech transcript.  
