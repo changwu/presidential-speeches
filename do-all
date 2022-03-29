@@ -11,3 +11,7 @@ for name in `git ls-files data`; do
   ./readability-indicators < ${name}
   echo ""
 done
+
+# To process a set of specific speeches, try something like this:
+# 
+#   $ for name in data/2021-*txt; do echo "*** ${name} *** "; echo -n "    "; head -1 ${name}; echo ""; cat ${name} | ./readability-indicators; echo ""; done
