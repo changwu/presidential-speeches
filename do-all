@@ -3,14 +3,62 @@
 # Quick and dirty output for now.  This doesn't really serve the
 # needs of comparative analysis, it just shows the raw data.
 
+# Known bugs: 
+# 
+# 1. Some Presidents show up twice in the output for a subtle reason.
+#    Let's take Millard Fillmore as an example: he shows up twice
+#    because during Fillmore's term in office the former Congressman
+#    Abraham Lincoln (who had not yet run for President) gave a speech
+#    eulogizing Henry Clay, and that speech is included in this
+#    collection as 1852-07-06-eulogy-henry-clay.txt, thus interrupting
+#    the Millard Fillmore sequence from 1850-08-06 to 1852-12-06.
+# 
+#    In other words, because our data source has chosen to include a
+#    speech given by a future President before he was President, this
+#    code's assumption that every President's speeches will have
+#    filename prefixes that form a numerically sorted sequence of
+#    dates is, in this one instance, incorrect.
+#
+#    A similar thing happens with Gerald Ford and Jimmy Carter.
+#    There might be others; I haven't looked carefully.    
+# 
+# 2. Grover Cleveland also shows up twice, but for a different reason:
+#    he was elected to non-consecutive terms.  A more sophisticated
+#    script would still find a way to group all the Cleveland speeches
+#    together, since the analysis here should be based on him as a
+#    person, not on him as a term of office.  But we already know this
+#    script isn't sophisticated.  Patches welcome.
+#
+# The real solution to all of these bugs is to properly group speeches
+# by President at the start of processing, and then handle each group.
+# I'm sure that's possible in a shell script, but it wouldn't be very
+# readable code; I'd probably want to switch to Python at that point.
+
+prev_prez=""
 for name in `git ls-files data`; do
-  echo "*** ${name}"
-  echo ""
-  head -1 ${name}
-  echo ""
-  ./readability-indicators < ${name}
-  echo ""
+  prez="`head -1 ${name} | grep "^President: " | cut -d " " -f 2- | tr ' ' '_'`"
+  if [ ! -d data/"${prez}" ]; then
+    mkdir data/"${prez}"
+    # That's our cue to process the previous president's data.
+    # (Of course, that means there's one President left over
+    # at the end, hence the klugey tail case after all this.)
+    if [ -n "${prev_prez}" ]; then
+      echo "*** `echo -n ${prev_prez} | tr '_' ' '` ***"
+      cat "data/${prev_prez}"/* | ./readability-indicators
+      rm -rf "data/${prev_prez}"
+      echo ""
+    fi
+  fi; 
+  cp "${name}" data/"${prez}/`basename ${name}`"
+  prev_prez="${prez}"
 done
+
+# It's a bit of a kluge that we have this last-case tail,
+# but this whole script is a kluge, so... <shrug>.
+echo "*** `echo ${prev_prez} | tr '_' ' '` ***"
+cat "data/${prev_prez}"/* | ./readability-indicators
+rm -rf "data/${prev_prez}"
+echo ""
 
 # To process a set of specific speeches, try something like this:
 # 
