@@ -3,9 +3,11 @@
 import sys
 
 # http://www.erinhengel.com/software/textatistic/ (source code
-# available at https://github.com/erinhengel/Textatistic).  Also, the
-# paper that motivated Erin Hengel to create Textastic is interesting
-# in itself: http://www.erinhengel.com/research/publishing_female.pdf.
+# available at https://code.librehq.com/kfogel/Textatistic -- that's
+# my fork, which I only made because Erin Hengel decided to stop
+# maintaining the original repository).  By the way, the paper that
+# motivated Erin Hengel to create Textastic is interesting in itself:
+# http://www.erinhengel.com/research/publishing_female.pdf.
 import textatistic
 
 # See https://en.wikipedia.org/wiki/Automated_readability_index for
