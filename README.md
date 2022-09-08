@@ -88,6 +88,7 @@ checked:
             President: James Madison
             President: James Monroe
             President: Jimmy Carter
+            President: Joe Biden
             President: John Adams
             President: John F. Kennedy
             President: John Quincy Adams
