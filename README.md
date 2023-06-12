@@ -43,8 +43,8 @@ the kind of linguistic analysis contemplated here.
 
 We haven't yet incorporated any material from APP here.  If there are
 speeches or press conferences that APP has that the Miller Center
-doesn't, then that data is not yet represented here.  "Patches
-welcome", as usual.
+doesn't, then that data is not yet represented here.  Again, "patches
+welcome".
 
 Comparative analysis.
 ---------------------
