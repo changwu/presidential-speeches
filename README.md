@@ -136,12 +136,31 @@ command ("presidential catenate", like Unix 'cat' but living in the
 White House I guess) that takes a transcript as input and prints just
 the President's actual words as output.
 
-* Double hyphen used for em-dash is inconsistently spaced.
+* Em-dashes are handled inconsistently throughout the corpus.
 
-  In some speeches--particularly the older ones--the double hyphen
-  without spaces on either side is used em-dash, as in this sentence.
-  In other speeches -- particularly the newer ones -- it's done with
-  spaces on either side, as in this sentence.
+  Sometimes a double hyphen is used for em-dash, and sometimes a true
+  Unicode em-dash ("&#8212;", a.k.a. Unicode
+  [U+2014](https://util.unicode.org/UnicodeJsps/character.jsp?a=2014),
+  a.k.a. HTML character entity `&#8212`) is used.
+
+  In both cases, the spacing around the em-dash is handled
+  inconsistently.  For example, in some speeches--particularly the
+  older ones--a double hyphen without spaces on either side is used
+  for em-dash, as in this sentence.  In other speeches -- particularly
+  the newer ones -- it's done with spaces on either side, as in this
+  sentence.  The same holds for the transcripts that use true
+  em-dashes.  For example, [this speech on
+  2022-09-21](data/2022-09-21-speech-77th-session-united-nations-general.txt)
+  and [this speech on 2023-02-07](2023-02-07-state-union-address.txt)
+  both use true em-dashes but never have spaces around them, whereas
+  [this 2023-02-21
+  speech](2023-02-21-remarks-one-year-anniversary-ukraine-war.txt) by
+  the same President always has the spaces.
+
+  All of these problems could probably be solved, or at least mostly
+  solved, by automated means, with enough care and attention.  I have
+  had insufficient amounts of either so far, but, in a refrain that is
+  no doubt beginning to grate, "patches welcome".
 
 * Debates and press conferences include other speakers.
 
