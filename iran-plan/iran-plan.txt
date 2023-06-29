@@ -50,6 +50,50 @@ https://chat.opentechstrategies.com/#narrow/dm/14,271-dm/near/168731):
 Also: https://github.com/hyperaudio/hyperaudio-lite and
 https://github.com/OpenEditor/openeditor.
 
+Okay, each page that has video has something like this in it:
+
+  <div class="video-parent">
+    <div class="video-container">
+    <video  poster=https://millercenter.org/sites/default/files/styles/video_poster_16x9_desktop_2x/public/mc-logo-video-poster.jpg?itok=Fbo2e12e controls>
+       <source type="" src="https://player.vimeo.com/external/215702311.hd.mp4?s=0fb4ba0486df869453d6f80daf5fb484e7a041b1&amp;profile_id=174">
+    </video>
+    <div class="poster-frame">
+    <div class="article--teaser-image-field">  <img loading="lazy" src="/sites/default/files/styles/video_poster_16x9_desktop_2x/public/mc-logo-video-poster.jpg?itok=Fbo2e12e" width="1600" height="900" alt="Miller Center logo" />
+    </div>
+      <a href="https://player.vimeo.com/external/215702311.hd.mp4?s=0fb4ba0486df869453d6f80daf5fb484e7a041b1&amp;profile_id=174" class="video-trigger">Play Video</a>
+    </div>
+    </div>
+  </div>
+
+and for audio, something like this:
+
+  <div class="presidential-speeches--audio"><div class="audio-player">
+      <audio height="100" src="https://d4q9blt8qjhv3.cloudfront.net/audio/djt_2017_0228_joint_session.mp3"
+                              data-wave_color="#888888"
+                                          data-prog_color="#E65400"
+                              ></audio>
+      <div class="controls">
+          <button class="btn btn-primary btn-back">
+              <i class="fa fa-step-backward"></i>
+              Backward
+          </button>
+  
+          <button class="btn btn-primary btn-play play">
+              Play
+          </button>
+  
+          <button class="btn btn-primary btn-stop">
+              Stop
+          </button>
+  
+          <button class="btn btn-primary btn-forward" >
+              Forward
+          </button>
+      </div>
+  </div>
+
+(The above example is from https://millercenter.org/the-presidency/presidential-speeches/february-28-2017-address-joint-session-congress.)
+
 -----------------------------------------------------------------------
 Below are all the occurrences of "iran" in the transcripts.  I'm going
 through them one by one, and above am noting the actual timing (in the
