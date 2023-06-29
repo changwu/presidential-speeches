@@ -10,9 +10,28 @@ pronounces it to rhyme with the first two syllables of "pirahna".
 But in the first public speech I've checked so far at least (thanks,
 Miller Center), he pronounces it like "I ran [to the store]".
 
-* 17:52 data/2017-02-28-address-joint-session-congress.txt:I have also imposed new sanctions on entities and individuals who support Iran's ballistic missile program, and reaffirmed our unbreakable alliance with the State of Israel.
+-----------------------------------------------------------------------
+Here are the approximate timing locations of the word within the
+various speeches:
+-----------------------------------------------------------------------
 
-------
+* data/2017-02-28-address-joint-session-congress.txt:I have also imposed new sanctions on entities and individuals who support Iran's ballistic missile program, and reaffirmed our unbreakable alliance with the State of Israel.
+
+  video: 17:52 
+
+* data/2017-09-19-address-united-nations-general-assembly.txt:The Iranian government masks a corrupt dictatorship behind the false guise of a democracy. It has turned a wealthy country with a rich history and culture into an economically depleted rogue state whose chief exports are violence, bloodshed, and chaos. The longest-suffering victims of Iran’s leaders are, in fact, its own people.
+
+  video: 17:30 for the first instance -- all the other instances are
+  clustered after that (see the transcript).
+
+* TBD
+
+-----------------------------------------------------------------------
+Below are all the occurrences of "iran" in the transcripts.  I'm going
+through them one by one, and above am noting the actual timing (in the
+video where available, otherwise in the sound recording) of the word.
+-----------------------------------------------------------------------
+
 $ cd data
 $ grep -i " iran" 2017-01-20-inaugural-address.txt 2017-02-28-address-joint-session-congress.txt 2017-06-29-speech-unleashing-american-energy-event.txt 2017-07-24-speech-boy-scout-jamboree.txt 2017-09-19-address-united-nations-general-assembly.txt 2017-12-18-remarks-national-security-strategy.txt 2018-01-26-address-world-economic-forum.txt 2018-01-30-state-union-address.txt 2018-02-01-remarks-house-and-senate-republican-member.txt 2018-02-15-statement-school-shooting-parkland-florida.txt 2018-02-23-remarks-conservative-political-action.txt 2018-03-19-remarks-combating-opioid-crisis.txt 2018-07-24-speech-veterans-foreign-wars-national-convention.txt 2018-09-25-address-73rd-session-united-nations-general.txt 2019-01-19-remarks-about-us-southern-border.txt 2019-02-05-state-union-address.txt 2019-09-24-remarks-united-nations-general-assembly.txt 2019-09-25-press-conference.txt 2019-10-27-statement-death-abu-bakr-al-baghdadi.txt 2020-01-03-remarks-killing-qasem-soleimani.txt 2020-01-08-statement-iran.txt 2020-01-24-speech-march-life.txt 2020-02-04-state-union-address.txt 2020-02-06-remarks-after-his-acquittal.txt 2020-03-11-statement-coronavirus.txt 2020-03-13-press-conference-about-coronavirus.txt 2020-04-13-coronavirus-task-force-briefing.txt 2020-04-15-press-briefing-coronavirus-task-force.txt 2020-04-23-task-force-briefing-coronavirus-pandemic.txt 2020-06-01-statement-protests-against-police-brutality.txt 2020-06-03-address-west-point-graduation.txt 2020-06-20-campaign-rally-tulsa-oklahoma.txt 2020-07-04-remarks-salute-america.txt 2020-08-08-press-conference-executive-orders 2020-09-07-labor-day-press-conference.txt 2020-09-26-announcing-his-nominee-us-supreme-court.txt 2020-10-26-swearing-ceremony-honorable-amy-coney-barrett.txt 2020-11-05-remarks-2020-election.txt 2021-01-06-speech-urging-supporters-go-home.txt 2021-01-07-message-after-pro-trump-mob-overruns-us-capitol.txt 2021-01-13-statement-about-violence-capitol.txt 2021-01-19-farewell-address.txt
 2017-02-28-address-joint-session-congress.txt:I have also imposed new sanctions on entities and individuals who support Iran's ballistic missile program, and reaffirmed our unbreakable alliance with the State of Israel.
