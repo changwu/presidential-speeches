@@ -24,7 +24,31 @@ various speeches:
   video: 17:30 for the first instance -- all the other instances are
   clustered after that (see the transcript).
 
-* TBD
+Aha, wait, change of plans: we can automate this!  Laurian says (in
+https://chat.opentechstrategies.com/#narrow/dm/14,271-dm/near/168731):
+
+ > hyperaudio story with hyperaudio "karaoke" player
+ > https://mozfest.hyper.audio/media/b4bfcf20-d568-41f6-85a2-d6f41a62d91e
+ > 
+ > It is easy to have a transcript where each word links to video seek
+ > operation.   Hyperaudio Lite is the simplest one
+ > https://hyperaudio.github.io/hyperaudio-lite/active.html
+ >
+ > if you transcribe with a tool that gives you word timing it is just
+ > a matter of javascript detecting where you click and where to seek
+ > the media; if you have transcript without timings, you can use a
+ > forced aligner to get timings (for English)
+ > 
+ > this is a forced aligner https://lowerquality.com/gentle/ you can
+ > get the desktop version and select media and paste text and align,
+ > the resulting json can be easily transformed to use with Hypeaudio
+ > Lite.
+ > 
+ > it has some CLI instructions also has a Dockerfile
+ > https://github.com/lowerquality/gentle
+
+Also: https://github.com/hyperaudio/hyperaudio-lite and
+https://github.com/OpenEditor/openeditor.
 
 -----------------------------------------------------------------------
 Below are all the occurrences of "iran" in the transcripts.  I'm going
