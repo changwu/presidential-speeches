@@ -16,7 +16,7 @@ import random
 
 MILLER_CENTER_BASE_URL = "https://millercenter.org/the-presidency/presidential-speeches/"
 HTML_DIR = "html"
-VIDEO_DIR = "videos"
+VIDEO_DIR = "video"
 # These next two directories help us track what upstream web page and
 # video names correspond to what local names in HTML_DIR and VIDEO_DIR.
 # 
@@ -34,7 +34,7 @@ VIDEO_DIR = "videos"
 # the local name, so that if we ever need to map back and forth
 # locally we can.
 UPSTREAM_HTML_DIR = os.path.join("upstream-names", "html")
-UPSTREAM_VIDEO_DIR = os.path.join("upstream-names", "videos")
+UPSTREAM_VIDEO_DIR = os.path.join("upstream-names", "video")
 
 def millerize(basename):
     """Convert, e.g., "2013-01-21-second-inaugural-address.txt"
@@ -142,6 +142,46 @@ def main():
     # (it seems to be four places per file) and compare them.  If
     # they're not all the same, then we issue a warning.
     video_re = re.compile('.*<(source|a)\s+.*(src|href)="(https://.*\.mp4[^"]*)".*')
+    # We could also fetch audio here.  Most (all?) of the speeches
+    # also have a plain audio download.  But as of 2023-07-03 there's
+    # only one speech where the video is missing and thus we'd need to
+    # get the audio (which fortunately is not missing) [ref:c323634b]:
+    #
+    #   https://millercenter.org/the-presidency/presidential-speeches/february-23-2018-remarks-conservative-political-action 
+    # 
+    # The video should be downloadable from...
+    # 
+    #   https://s3.amazonaws.com/web.web1-misc/americanpresident/video/President_Trump_Delivers_Remarks_Conservative_Political_Action_Conference.mp4?download=1
+    #
+    # ...but it's not, and so the Miller Center web page for that one
+    # is broken.  I've told them via https://millercenter.org/contact:
+    #
+    #   > Hi.  The video on
+    #   > https://millercenter.org/the-presidency/presidential-speeches/february-23-2018-remarks-conservative-political-action
+    #   > is missing.  It appears that the video file has disappeared
+    #   > from Amazon S3, or perhaps access to that file is blocked: I
+    #   > get an "Access Denied" error when I try to visit it manually
+    #   > at "https://s3.amazonaws.com/web.web1-misc/americanpresident/video/President_Trump_Delivers_Remarks_Conservative_Political_Action_Conference.mp4?download=1".
+    #   > 
+    #   > You might want to check all Presidential Speech pages whose
+    #   > videos are hosted on Amazon S3.  The others I checked were
+    #   > all hosted on Vimeo or Cloudfront and were fine.  This
+    #   > happened to be the only one on Amazon S3 that I checked, and
+    #   > it was inaccessible -- so I don't know if the problem is
+    #   > just with that one video or with the S3 configuration more
+    #   > generally.
+    #   > 
+    #   > Best regards,
+    #   > 
+    #   > -Karl
+    # 
+    # In the meantime, one can just manually download the audio from
+    # here:
+    # 
+    #   https://d4q9blt8qjhv3.cloudfront.net/americanpresident/audio/President_Trump_Delivers_Remarks_Conservative_Political_Action_Conference.mp3?download=1
+    #
+    # For just that one problem case, I don't think it's worth
+    # handling the audio automatically.
     for speech in speeches:
         basename, ign = os.path.splitext(os.path.basename(speech))
         html_file = os.path.join(HTML_DIR, basename) + ".html"
@@ -208,18 +248,26 @@ def main():
         print(f"   {our_video_file_path}")
         upstream_video_file_path = os.path.join(UPSTREAM_VIDEO_DIR, video_basename)
         print(f"   {upstream_video_file_path}")
-#        if not os.path.exists(our_video_file_path):
-#            print(f"Fetching {our_video_file_path}... ", end="")
-#            with urllib.request.urlopen(video_url) as response:
-#                with open(our_video_file_path, "wb") as video_file:
-#                    shutil.copyfileobj(response, video_file)
-#            print("done.")
-#            # Earlier comment about kluge applies here too.
-#            os.symlink(os.path.join("..", "..", our_video_file_path),
-#                       upstream_video_file_path)
-#            time.sleep(random.randint(2,7))
-#        else:
-#            print(f"Video file already present: '{video_file_path}'.")
+        try:
+            if not os.path.exists(our_video_file_path):
+                print(f"Fetching {our_video_file_path}... ", end="")
+                with urllib.request.urlopen(video_url) as response:
+                    with open(our_video_file_path, "wb") as video_file:
+                        shutil.copyfileobj(response, video_file)
+                print("done.")
+                # Earlier comment about kluge applies here too.
+                os.symlink(os.path.join("..", "..", our_video_file_path),
+                           upstream_video_file_path)
+                time.sleep(random.randint(2,7))
+            else:
+                print(f"Video file already present: '{our_video_file_path}'.")
+        except Exception as e:
+            # This is really about ref:c323634b, which see.
+            sys.stderr.write(f"ERROR: Unable to fetch '{video_url}.'\n")
+            sys.stderr.write(f"       Continuing, but note that\n")
+            sys.stderr.write(f"       '{our_video_file_path}'\n")
+            sys.stderr.write(f"       will be missing.  You may want to\n")
+            sys.stderr.write(f"       try downloading the audio file.\n")
 
 
 if __name__ == '__main__':
