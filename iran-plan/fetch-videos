@@ -1,0 +1,43 @@
+#!/usr/bin/env python3
+
+"""fetch-videos: TBD
+First, let's convert a bunch of named files in data to URLs.
+"""
+
+import getopt
+import sys
+import os
+
+
+def main():
+    speeches = None
+    try:
+        (opts, args) = getopt.getopt(sys.argv[1:], "i:h?",
+                                     [ "input=",
+                                       "help", 
+                                       "usage",
+                                     ])
+    except getopt.GetoptError as err:
+        sys.stderr.write(str(err))
+        sys.stderr.write("\n")
+        sys.exit(1)
+
+    for opt, optarg in opts:
+        if opt in ("-h", "-?", "--help", "--usage",):
+            print(__doc__)
+            sys.exit(0)
+        elif opt in ("-i", "--input",):
+            with open(optarg) as f:
+                speeches = [line.rstrip() for line in f]
+
+    if speeches is None:
+        sys.stderr.write("ERROR: No file containing a list of speeches given.\n")
+        sys.stderr.write("       You probably forgot to use -i / --input.\n")
+        sys.exit(1)
+        
+    for line in speeches:
+        print(f"got line: {line}")
+
+
+if __name__ == '__main__':
+  main()
