@@ -6,9 +6,11 @@ First, let's convert a bunch of named files in data to URLs.
 
 import sys
 import os
+import re
 import getopt
 import shutil
 import urllib.request
+import collections
 
 MILLER_CENTER_BASE_URL = "https://millercenter.org/the-presidency/presidential-speeches/"
 HTML_DIR = "html"
@@ -62,6 +64,7 @@ def main():
         sys.stderr.write("       You probably forgot to use -i / --input.\n")
         sys.exit(1)
         
+    # Fetch the HTML page for each speech.
     for line in speeches:
         basename, ign = os.path.splitext(os.path.basename(line))
         url_path = date_convert_path(basename)
@@ -75,6 +78,63 @@ def main():
             print("done.")
         else:
             print(f"Already present: '{html_file_path}'.")
+
+    print("")
+    # Get the URL for each speech's video.  Re-read the names of the
+    # HTML files locally, so that in case there were any problems
+    # earlier they don't hold us up in this step.
+    html_basenames = [f for f in os.listdir(HTML_DIR) if f.endswith(".html")]
+    # The HTML actually has several places where the video file is
+    # mentioned.  For example:
+    # 
+    #   [...]
+    #   <video  poster=https://millercenter.org/sites/default/files/styles/video_poster_16x9_desktop_2x/public/mc-logo-video-poster.jpg?itok=Fbo2e12e controls>
+    #      <source type="" src="https://player.vimeo.com/external/215702311.hd.mp4?s=0fb4ba0486df869453d6f80daf5fb484e7a041b1&amp;profile_id=174">
+    #   </video>
+    #   <div class="poster-frame">
+    #   <div class="article--teaser-image-field">  <img loading="lazy" src="/sites/default/files/styles/video_poster_16x9_desktop_2x/public/mc-logo-video-poster.jpg?itok=Fbo2e12e" width="1600" height="900" alt="Miller Center logo" />
+    #   </div>
+    #     <a href="https://player.vimeo.com/external/215702311.hd.mp4?s=0fb4ba0486df869453d6f80daf5fb484e7a041b1&amp;profile_id=174" class="video-trigger">Play Video</a>
+    #   </div>
+    #   [...]
+    # 
+    # Looks straightforward, right?
+    #
+    # Nah, you knew it wouldn't be that easy :-)
+    # 
+    # Sometimes the video is on Vimeo, sometimes on Cloudfront,
+    # sometimes on Amazon S3, and who knows what other services
+    # they're using -- those are just the three I noticed tonight.
+    # 
+    # Luckily, the "<source ...>" tag is always all on one line, and
+    # al the videos seem to end with ".mp4".  So we don't have to use
+    # BeautifulSoup or whatever to actually parse the HTML (which in a
+    # way is a pity, because BeautifulSoup is fun to use).  Instead,
+    # we can get away with reading the file line by line and doing a
+    # regexp match on each line.
+    # 
+    # For each file, we find all the places where a video is linked to
+    # (it seems to be four places per file) and compare them.  If
+    # they're not all the same, then we issue a warning.
+    video_re = re.compile('.*<(source|a)\s+.*(src|href)="(https://.*\.mp4).*')
+    for name in html_basenames:
+        video_urls = collections.defaultdict(int) # standard dict of counts
+        html_file = os.path.join(HTML_DIR, name)
+        with open(html_file, "r") as f:
+            while line := f.readline():
+                m = video_re.match(line)
+                if m is not None:
+                    video_url = m.group(3)
+                    video_urls[video_url] += 1
+        if len(video_urls) == 0:
+            sys.stderr.write(f"WARNING: No video URLs found in '{html_file}'\n")
+        elif len(video_urls) > 1:
+            sys.stderr.write(f"WARNING: More than one video URL found in '{html_file}':\n")
+            for video_url, count in video_urls:
+                sys.stderr.write(f"         '{video_url}' ({count} times):\n")
+        else:
+            video_url, = video_urls.keys()
+            print(f"{html_file}: '{video_url}'")
 
 
 if __name__ == '__main__':
