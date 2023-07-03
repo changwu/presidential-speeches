@@ -7,9 +7,12 @@ First, let's convert a bunch of named files in data to URLs.
 import sys
 import os
 import getopt
+import shutil
+import urllib.request
 
 MILLER_CENTER_BASE_URL = "https://millercenter.org/the-presidency/presidential-speeches/"
-
+HTML_DIR = "html"
+VIDEO_DIR = "videos"
 
 def date_convert_path(basename):
     """Convert, e.g., "2013-01-21-second-inaugural-address.txt"
@@ -17,7 +20,7 @@ def date_convert_path(basename):
     """
     year = basename[0:4]
     month = basename[5:7]
-    day = basename[8:10]
+    day = str(int(basename[8:10])) # cheaply remove any leading 0
     rest = basename[11:]
     # The "right" way to do this would be to import the calendar
     # module and use calendar.month_name[N].  Unfortunately, that
@@ -62,7 +65,16 @@ def main():
     for line in speeches:
         basename, ign = os.path.splitext(os.path.basename(line))
         url_path = date_convert_path(basename)
-        print(f"{url_path}")
+        html_file_path = os.path.join(HTML_DIR, url_path) + ".html"
+        full_url = MILLER_CENTER_BASE_URL + url_path
+        if not os.path.exists(html_file_path):
+            print(f"Fetching {html_file_path}... ", end="")
+            with urllib.request.urlopen(full_url) as response:
+                with open(html_file_path, "wb") as html_file:
+                    shutil.copyfileobj(response, html_file)
+            print("done.")
+        else:
+            print(f"Already present: '{html_file_path}'.")
 
 
 if __name__ == '__main__':
