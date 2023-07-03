@@ -11,12 +11,32 @@ import getopt
 import shutil
 import urllib.request
 import collections
+import time
+import random
 
 MILLER_CENTER_BASE_URL = "https://millercenter.org/the-presidency/presidential-speeches/"
 HTML_DIR = "html"
 VIDEO_DIR = "videos"
+# These next two directories help us track what upstream web page and
+# video names correspond to what local names in HTML_DIR and VIDEO_DIR.
+# 
+# The way the Miller Center does naming, each speech's web page has a
+# url path like "february-28-2017-address-joint-session-congress", and
+# then the HTML in that web page has links to the video for the speech
+# -- but the video names are all over the place; there is no naming
+# convention for them at all.
+# 
+# We, meanwhile, would like to have predictable names locally, using
+# the same style of filenames (i.e., starting with an ISO 8601 date)
+# as the transcripts do in ../data/.  So that's how things are
+# arranged in HTML_DIR and VIDEO_DIR.  Then in UPSTREAM_HTML_DIR and
+# UPSTREAM_VIDEO_DIR, we make symlinks linking the upstream name to
+# the local name, so that if we ever need to map back and forth
+# locally we can.
+UPSTREAM_HTML_DIR = os.path.join("upstream-names", "html")
+UPSTREAM_VIDEO_DIR = os.path.join("upstream-names", "videos")
 
-def date_convert_path(basename):
+def millerize(basename):
     """Convert, e.g., "2013-01-21-second-inaugural-address.txt"
     to its Miller Center name: "january-21-2013-second-inaugural-address".
     """
@@ -65,25 +85,30 @@ def main():
         sys.exit(1)
         
     # Fetch the HTML page for each speech.
-    for line in speeches:
-        basename, ign = os.path.splitext(os.path.basename(line))
-        url_path = date_convert_path(basename)
-        html_file_path = os.path.join(HTML_DIR, url_path) + ".html"
+    for speech in speeches:
+        basename, ign = os.path.splitext(os.path.basename(speech))
+        url_path = millerize(basename)
         full_url = MILLER_CENTER_BASE_URL + url_path
-        if not os.path.exists(html_file_path):
-            print(f"Fetching {html_file_path}... ", end="")
+        our_html_file_path = os.path.join(HTML_DIR, basename) + ".html"
+        upstream_html_file_path = os.path.join(UPSTREAM_HTML_DIR, url_path) + ".html"
+        if not os.path.exists(our_html_file_path):
+            print(f"Fetching {our_html_file_path}... ", end="")
             with urllib.request.urlopen(full_url) as response:
-                with open(html_file_path, "wb") as html_file:
+                with open(our_html_file_path, "wb") as html_file:
                     shutil.copyfileobj(response, html_file)
             print("done.")
+            # This is kind of a kluge.  We just happen to "know" the
+            # relative locations of HTML_DIR vs UPSTREAM_HTML_DIR,
+            # so we insert the "../../" here.  We also assume that in
+            # practice os.path.join() will be fine if its last
+            # argument already includes a "/", which it will be.
+            os.symlink(os.path.join("..", "..", our_html_file_path),
+                       upstream_html_file_path)
         else:
-            print(f"Already present: '{html_file_path}'.")
+            print(f"HTML file already present: '{our_html_file_path}'.")
 
     print("")
-    # Get the URL for each speech's video.  Re-read the names of the
-    # HTML files locally, so that in case there were any problems
-    # earlier they don't hold us up in this step.
-    html_basenames = [f for f in os.listdir(HTML_DIR) if f.endswith(".html")]
+
     # The HTML actually has several places where the video file is
     # mentioned.  For example:
     # 
@@ -116,10 +141,11 @@ def main():
     # For each file, we find all the places where a video is linked to
     # (it seems to be four places per file) and compare them.  If
     # they're not all the same, then we issue a warning.
-    video_re = re.compile('.*<(source|a)\s+.*(src|href)="(https://.*\.mp4).*')
-    for name in html_basenames:
+    video_re = re.compile('.*<(source|a)\s+.*(src|href)="(https://.*\.mp4[^"]*)".*')
+    for speech in speeches:
+        basename, ign = os.path.splitext(os.path.basename(speech))
+        html_file = os.path.join(HTML_DIR, basename) + ".html"
         video_urls = collections.defaultdict(int) # standard dict of counts
-        html_file = os.path.join(HTML_DIR, name)
         with open(html_file, "r") as f:
             while line := f.readline():
                 m = video_re.match(line)
@@ -129,12 +155,71 @@ def main():
         if len(video_urls) == 0:
             sys.stderr.write(f"WARNING: No video URLs found in '{html_file}'\n")
         elif len(video_urls) > 1:
-            sys.stderr.write(f"WARNING: More than one video URL found in '{html_file}':\n")
-            for video_url, count in video_urls:
-                sys.stderr.write(f"         '{video_url}' ({count} times):\n")
+            # Probably a false alarm.  Often we'll see things like...
+            # 
+            #   https://player.vimeo.com/external/215702311.hd.mp4?s=0fb4ba0486df869453d6f80daf5fb484e7a041b1&amp;profile_id=174
+            # 
+            # and
+            # 
+            #   https://player.vimeo.com/external/215702311.hd.mp4?s=0fb4ba0486df869453d6f80daf5fb484e7a041b1&amp;profile_id=174?download=1
+            # 
+            # ...with the former appearing, say, 3 times in the file
+            # and the latter appearing usually only once.
+            # 
+            # To check for this, we cut off the URLs at the "?" and
+            # see if everything before that is the same.  If it is,
+            # there's nothing to warn about; if not, we warn but still
+            # continue.  Either way, we'll take the "best" unabridged
+            # URL available, as explained later on.
+            abridged_video_urls = collections.defaultdict(int)
+            for video_url in video_urls:
+                idx = video_url.find("?")
+                if idx == -1:
+                    abridged = video_url
+                else:
+                    abridged = video_url[:idx]
+                abridged_video_urls[abridged] += 1
+            if len(abridged_video_urls) > 1:
+                sys.stderr.write(f"WARNING: More than one video URL found in '{html_file}':\n")
+        # Take the "best" video URL.  The best one is the one
+        # ending with "download=1" if such is available (and we
+        # assume that there is only one of those, if any);
+        # otherwise it's the one that appeared the most times in
+        # the page.
+        best_count = 0
+        video_url = None
+        for vu in video_urls:
+            if vu.endswith("?download=1"):
+                video_url = vu
+                break
+            else:
+                if video_urls[vu] > best_count:
+                    best_count = video_urls[vu]
+                    video_url = vu
+        print(f"{html_file}:")
+        print(f"   {video_url}")
+        tmp_basename = os.path.basename(video_url)
+        idx = tmp_basename.find("?")
+        if idx == -1:
+            video_basename = tmp_basename
         else:
-            video_url, = video_urls.keys()
-            print(f"{html_file}: '{video_url}'")
+            video_basename = tmp_basename[:idx]
+        our_video_file_path = os.path.join(VIDEO_DIR, basename) + ".mp4"
+        print(f"   {our_video_file_path}")
+        upstream_video_file_path = os.path.join(UPSTREAM_VIDEO_DIR, video_basename)
+        print(f"   {upstream_video_file_path}")
+#        if not os.path.exists(our_video_file_path):
+#            print(f"Fetching {our_video_file_path}... ", end="")
+#            with urllib.request.urlopen(video_url) as response:
+#                with open(our_video_file_path, "wb") as video_file:
+#                    shutil.copyfileobj(response, video_file)
+#            print("done.")
+#            # Earlier comment about kluge applies here too.
+#            os.symlink(os.path.join("..", "..", our_video_file_path),
+#                       upstream_video_file_path)
+#            time.sleep(random.randint(2,7))
+#        else:
+#            print(f"Video file already present: '{video_file_path}'.")
 
 
 if __name__ == '__main__':
