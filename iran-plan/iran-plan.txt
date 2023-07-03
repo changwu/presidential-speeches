@@ -160,9 +160,11 @@ various speeches:
 
 * 2019-02-05-state-union-address.txt
 
-My administration has acted decisively to confront the world’s leading state sponsor of terror: the radical regime in Iran.
+  68:52  the radical regime in Iran.
+  (NOTE: TRANSCRIPT IS MISSING THESE WORDS HERE: "It is a radical regime.  They do bad, bad things.")
+  69:10  disastrous Iran nuclear deal
 
-To ensure this corrupt dictatorship never acquires nuclear weapons, I withdrew the United States from the disastrous Iran nuclear deal. And last fall, we put in place the toughest sanctions ever imposed on a country.
+
 
 
 -----------------------------------------------------------------------
