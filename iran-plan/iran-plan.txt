@@ -10,21 +10,7 @@ pronounces it to rhyme with the first two syllables of "pirahna".
 But in the first public speech I've checked so far at least (thanks,
 Miller Center), he pronounces it like "I ran [to the store]".
 
------------------------------------------------------------------------
-Here are the approximate timing locations of the word within the
-various speeches:
------------------------------------------------------------------------
-
-* data/2017-02-28-address-joint-session-congress.txt:I have also imposed new sanctions on entities and individuals who support Iran's ballistic missile program, and reaffirmed our unbreakable alliance with the State of Israel.
-
-  video: 17:52 
-
-* data/2017-09-19-address-united-nations-general-assembly.txt:The Iranian government masks a corrupt dictatorship behind the false guise of a democracy. It has turned a wealthy country with a rich history and culture into an economically depleted rogue state whose chief exports are violence, bloodshed, and chaos. The longest-suffering victims of Iran’s leaders are, in fact, its own people.
-
-  video: 17:30 for the first instance -- all the other instances are
-  clustered after that (see the transcript).
-
-Aha, wait, change of plans: we can automate this!  Laurian says (in
+We could perhaps automate this.  Laurian says (in
 https://chat.opentechstrategies.com/#narrow/dm/14,271-dm/near/168731):
 
  > hyperaudio story with hyperaudio "karaoke" player
@@ -49,6 +35,16 @@ https://chat.opentechstrategies.com/#narrow/dm/14,271-dm/near/168731):
 
 Also: https://github.com/hyperaudio/hyperaudio-lite and
 https://github.com/OpenEditor/openeditor.
+
+Building 'gentle' is a bear, unless you want to let the install
+scripts do everything for you.  I decided not to.  So first I had to
+build its dependency OpenBLAS (https://github.com/xianyi/OpenBLAS):
+
+  $ time make -j`nproc` USE_LOCKING=1 USE_THREAD=0
+
+(params from ~/src/gentle/ext/kaldi/tools/extras/install_openblas.sh,
+which in turn is invoked by ~/src/gentle/ext/install_kaldi.sh, which
+in turn is invoked by the top-level ~/src/gentle/install.sh).
 
 Okay, each page that has video has something like this in it:
 
@@ -93,6 +89,56 @@ and for audio, something like this:
   </div>
 
 (The above example is from https://millercenter.org/the-presidency/presidential-speeches/february-28-2017-address-joint-session-congress.)
+
+-----------------------------------------------------------------------
+Here are the approximate timing locations of the word within the
+various speeches:
+-----------------------------------------------------------------------
+
+* 2017-02-28-address-joint-session-congress.txt
+
+  17:51 who support Iran's ballistic missile program
+
+* 2017-09-19-address-united-nations-general-assembly.txt
+
+  17:31  in this room.  The Iranian government masks
+  17:57  The longest-suffering victims of Iran’s leaders are
+  18:05  Rather than use its resources to improve Iranian lives
+  18:23  which rightly belongs to Iran’s people
+  19:08  The Iran Deal was one of the worst
+  19:31  join us in demanding that Iran’s government
+  19:47  above all, Iran’s government
+  20:00  good people of Iran want change
+  20:08  that Iran’s
+  20:45  will the Iranian people
+  21:00  The Iranian regime’s support for terror
+
+  ERRORS: the day will come when the ["Iranian" not actually said] people will face a choice
+
+* 2017-12-18-remarks-national-security-strategy.txt
+
+  09:01  incomprehensibly bad deal with Iran
+  13:22  To counter Iran
+  13:35  I declined to certify the Iran Deal to Congress
+
+* 2018-01-26-address-world-economic-forum.txt
+
+  10:17  confront Iran’s support for terrorists
+  10:20  and block Iran’s path to a nuclear weapon.
+
+* 2018-01-30-state-union-address.txt
+
+  67:26  When the people of Iran rose up
+  67:37  stands with the people of Iran
+  68:01  terrible Iran nuclear deal
+
+* 2018-02-23-remarks-conservative-political-action.txt
+
+   terrible one-sided Iran nuclear deal
+
+
+
+
 
 -----------------------------------------------------------------------
 Below are all the occurrences of "iran" in the transcripts.  I'm going
