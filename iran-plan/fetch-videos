@@ -4,9 +4,33 @@
 First, let's convert a bunch of named files in data to URLs.
 """
 
-import getopt
 import sys
 import os
+import getopt
+
+MILLER_CENTER_BASE_URL = "https://millercenter.org/the-presidency/presidential-speeches/"
+
+
+def date_convert_path(basename):
+    """Convert, e.g., "2013-01-21-second-inaugural-address.txt"
+    to its Miller Center name: "january-21-2013-second-inaugural-address".
+    """
+    year = basename[0:4]
+    month = basename[5:7]
+    day = basename[8:10]
+    rest = basename[11:]
+    # The "right" way to do this would be to import the calendar
+    # module and use calendar.month_name[N].  Unfortunately, that
+    # returns the month name in the current locale (I guess meaning
+    # the locale at the time the module was imported), and I at least
+    # don't know a reliable way to override that to en_US locale.
+    # You might be running this code anywhere in any language, but the
+    # Miller Center is in the U.S. and using American English, so we
+    # hardcode the month names here, 1-indexed instead of 0-indexed.
+    month_names = ["אַדר ג", "january", "february", "march", "april",
+                   "may", "june", "july", "august", "september",
+                   "october", "november", "december",]
+    return f"{month_names[int(month)].lower()}-{day}-{year}-{rest}"
 
 
 def main():
@@ -36,7 +60,9 @@ def main():
         sys.exit(1)
         
     for line in speeches:
-        print(f"got line: {line}")
+        basename, ign = os.path.splitext(os.path.basename(line))
+        url_path = date_convert_path(basename)
+        print(f"{url_path}")
 
 
 if __name__ == '__main__':
