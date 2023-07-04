@@ -9,9 +9,9 @@
 # 
 #   17:51 who support Iran's ballistic missile program
 
-rm out.mp4
-ffmpeg -ss 00:17:51.99 -t 0.68 -i video/2017-02-28-address-joint-session-congress.mp4 -map 0 -c copy out.mp4
-vlc out.mp4
+rm -f tmp.mp4
+ffmpeg -ss 00:17:51.99 -t 0.68 -i video/2017-02-28-address-joint-session-congress.mp4 -map 0 -c copy tmp.mp4
+vlc tmp.mp4
 
 # Okay, that works.  Next step is to make a config file, so
 # we can just edit timings there in a user-friendly way.
