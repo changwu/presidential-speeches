@@ -13,6 +13,30 @@ Miller Center), he pronounces it like "I ran [to the store]".
 See 'extract-snippets' (WIP) for the approximate timings of the word
 within the various speeches.
 
+Sizes:
+
+  > video/:
+  > total 7146052
+  > -rw-r--r-- 1 kfogel kfogel  895343913 Jul  3 01:41 2017-02-28-address-joint-session-congress.mp4
+  > -rw-r--r-- 1 kfogel kfogel  479857795 Jul  3 01:41 2017-09-19-address-united-nations-general-assembly.mp4
+  > -rw-r--r-- 1 kfogel kfogel  183566946 Jul  3 01:42 2017-12-18-remarks-national-security-strategy.mp4
+  > -rw-r--r-- 1 kfogel kfogel  137178287 Jul  3 01:42 2018-01-26-address-world-economic-forum.mp4
+  > -rw-r--r-- 1 kfogel kfogel 1113972852 Jul  3 01:46 2018-01-30-state-union-address.mp4
+  > -rw-r--r-- 1 kfogel kfogel  327202825 Jul  3 02:02 2018-07-24-speech-veterans-foreign-wars-national-convention.mp4
+  > -rw-r--r-- 1 kfogel kfogel  180167875 Jul  3 02:02 2018-09-25-address-73rd-session-united-nations-general.mp4
+  > -rw-r--r-- 1 kfogel kfogel  991564215 Jul  3 02:04 2019-02-05-state-union-address.mp4
+  > -rw-r--r-- 1 kfogel kfogel  240014881 Jul  3 02:05 2019-09-24-remarks-united-nations-general-assembly.mp4
+  > -rw-r--r-- 1 kfogel kfogel  373772647 Jul  3 02:05 2019-09-25-press-conference.mp4
+  > -rw-r--r-- 1 kfogel kfogel   24784951 Jul  3 02:05 2020-01-03-remarks-killing-qasem-soleimani.mp4
+  > -rw-r--r-- 1 kfogel kfogel   50617578 Jul  3 02:06 2020-01-08-statement-iran.mp4
+  > -rw-r--r-- 1 kfogel kfogel  936174259 Jul  3 02:07 2020-02-04-state-union-address.mp4
+  > -rw-r--r-- 1 kfogel kfogel 1291593975 Jul  3 02:10 2020-06-20-campaign-rally-tulsa-oklahoma.mp4
+  > -rw-r--r-- 1 kfogel kfogel   91547995 Jul  3 02:10 2021-01-19-farewell-address.mp4
+  > 
+  > audio/:
+  > total 139388
+  > -rw-r--r-- 1 kfogel kfogel 142725383 Aug 18  2022 2018-02-23-remarks-conservative-political-action.mp3
+
 -------------------------------------------------------------
 How to find the video and audo resources from each HTML page:
 -------------------------------------------------------------
