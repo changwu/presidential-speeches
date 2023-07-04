@@ -1,0 +1,154 @@
+#!/bin/sh
+
+# * 2017-02-28-address-joint-session-congress.txt
+# 
+#   17:51 who support Iran's ballistic missile program
+
+rm out.mp4
+ffmpeg -ss 00:17:51.99 -t 0.68 -i video/2017-02-28-address-joint-session-congress.mp4 -map 0 -c copy out.mp4
+vlc out.mp4
+
+# Okay, that works.  Next step is to make a config file, so
+# we can just edit timings there in a user-friendly way.
+
+# * 2017-09-19-address-united-nations-general-assembly.txt
+# 
+#   17:31  in this room.  The Iranian government masks
+#   17:57  The longest-suffering victims of Iran’s leaders are
+#   18:05  Rather than use its resources to improve Iranian lives
+#   18:23  which rightly belongs to Iran’s people
+#   19:08  The Iran Deal was one of the worst
+#   19:31  join us in demanding that Iran’s government
+#   19:47  above all, Iran’s government
+#   20:00  good people of Iran want change
+#   20:08  that Iran’s
+#   20:45  will the Iranian people
+#   21:00  The Iranian regime’s support for terror
+# 
+#   ERRORS: the day will come when the ["Iranian" not actually said] people will face a choice
+# 
+# * 2017-12-18-remarks-national-security-strategy.txt
+# 
+#   09:01  incomprehensibly bad deal with Iran
+#   13:22  To counter Iran
+#   13:35  I declined to certify the Iran Deal to Congress
+# 
+# * 2018-01-26-address-world-economic-forum.txt
+# 
+#   10:17  confront Iran’s support for terrorists
+#   10:20  and block Iran’s path to a nuclear weapon.
+# 
+# * 2018-01-30-state-union-address.txt
+# 
+#   67:26  When the people of Iran rose up
+#   67:37  stands with the people of Iran
+#   68:01  terrible Iran nuclear deal
+# 
+# * 2018-02-23-remarks-conservative-political-action.txt
+# 
+#   25:15:  terrible one-sided Iran nuclear deal  (NOTE: AUDIO ONLY)
+# 
+# * 2018-07-24-speech-veterans-foreign-wars-national-convention.txt
+# 
+#   12:47 horrible one-sided Iran nuclear
+#   12:57 And Iran is not the same country anymore
+# 
+# * 2018-09-25-address-73rd-session-united-nations-general.txt
+# 
+#   09:42  the corrupt dictatorship in Iran.
+#   09:44  Iran’s leaders
+#   10:00  Instead, Iran's leaders plunder
+#   10:14  The Iranian people are
+#   10:21  dollars from Iran’s treasury
+#   10:38  Iran’s neighbors have paid
+#   10:59  2015 Iran Nuclear Deal and
+#   11:07  The Iran deal
+#   11:11  windfall for Iran’s leaders
+#   11:15  Iran’s military budget
+#   11:58  under the Iran deal
+#   12:08  import Iranian crude oil
+#   12:44  isolate Iran’s regime
+#   12:52  support Iran’s people
+# 
+# * 2019-02-05-state-union-address.txt
+# 
+#   68:52  the radical regime in Iran.
+#   (NOTE: TRANSCRIPT IS MISSING THESE WORDS HERE: "It is a radical regime.  They do bad, bad things.")
+#   69:10  disastrous Iran nuclear deal
+# 
+# * 2019-09-24-remarks-united-nations-general-assembly.txt
+# 
+#   12:42  repressive regime in Iran
+#   12:52  Not only is Iran the world’s
+#   12:56  but Iran’s leaders are fueling
+#   13:19  To stop Iran’s path
+#   13:24  terrible Iran nuclear deal
+#   14:00  response to Iran’s recent attack
+#   14:08  sanctions on Iran’s central bank
+#   14:21  subsidize Iran’s bloodlust
+#   14:25  as long as Iran’s menacing behavior
+#   14:34  Iran’s leaders will
+#   14:56  listened to Iran’s rulers
+#   16:18  Iran’s citizens deserve
+#   16:37  for Iran’s leaders to step forward
+#   16:51  time for Iran’s leaders to finally
+#   16:55  put the Iranian people first.
+#   17:43  like Iran, his country is 
+# 
+# * 2019-09-25-press-conference.txt
+# 
+#   20:38  and Iranian dictatorships
+# 
+# * 2020-01-03-remarks-killing-qasem-soleimani.txt
+# 
+#   02:14  protestors in Iran
+#   02:33  respect for the Iranian people
+#   02:43  the Iranian regime’s aggression
+#   02:56  belongs to the people of Iran
+#   03:34  refers to Iran
+# 
+# * 2020-01-08-statement-iran.txt
+# 
+#   00:04  Iran will never be allowed
+#   00:26  by the Iranian regime
+#   00:45  Iran appears to be
+#   01:23  tolerated Iran’s destructive
+#   01:31  Iran has been the 
+#   03:07  American and Iranian blood
+#   03:26  response to Iranian aggression
+#   03:34  sanctions on the Iranian regime
+#   03:40  until Iran changes its behavior.
+#   03:45  Iran has seized ships
+#   03:56  Iran’s hostilities substantially increased
+#   03:59  foolish Iran nuclear deal
+#   04:24  Iran went on a terror spree
+#   05:01  all throughout Iran.
+#   05:10  gives Iran a clear and quick
+#   05:15  Iran must abandon its nuclear ambitions
+#   05:36  remnants of the Iran deal
+#   05:43  deal with Iran that makes
+#   05:51  allows Iran to thrive and prosper
+#   05:58  Iran can be a great country.
+#   06:05  Iran continues to foment violence
+#   06:15  unified message to the Iranian regime
+#   08:36  ISIS is natural enemy of Iran
+#   08:40  destruction of ISIS is good for Iran
+#   08:51  to the people and leaders of Iran
+# 
+# * 2020-02-04-state-union-address.txt
+# 
+#   67:56  was the Iranian regime’s most
+#   69:16  proud Iranians raise their voices
+#   69:20  The Iranian regime must abandon
+#   69:33  the Iranian economy is doing
+# 
+# * 2020-06-20-campaign-rally-tulsa-oklahoma.txt
+# 
+#   66:56  Iran wants him to win  
+#   67:13  if I lose. Iran. President Obama  (NOTE: very emphatically pronounced -- good one)
+#   67:43  Iran wants to make a deal
+# 
+# * 2021-01-19-farewell-address.txt
+# 
+#   11:29  oppressive Iranian regime
+#   11:32  Iranian butcher
