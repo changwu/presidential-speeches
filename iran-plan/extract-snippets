@@ -166,7 +166,6 @@ def main():
                 "-i", source,
                 "-map", "0", "-c", "copy",
                 os.path.join("snippets", output_name),]
-        print(f"Extracting '{output_name}'... ",)
         try:
             completed = subprocess.run(args,
                                        capture_output=True,
@@ -174,13 +173,14 @@ def main():
                                        encoding="UTF-8",
                                        text=True,
                                        check=True)
-            for line in completed.stderr.splitlines(keepends=True):
-                sys.stderr.write(f"ERROR: '{line}'")
+            if len(completed.stderr) == 0:
+                print(f"{output_name}")
+            else:
+                for line in completed.stderr.splitlines(keepends=True):
+                    sys.stderr.write(f"ERROR: '{line}'")
         except subprocess.CalledProcessError as e:
             sys.stderr.write(f"ERROR: '{e}'\n")
             sys.exit(1)
-
-        print("done")
 
 
 if __name__ == '__main__':
