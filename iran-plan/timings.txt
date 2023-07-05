@@ -28,9 +28,9 @@
 
 * video/2017-12-18-remarks-national-security-strategy.mp4
 
-  #TBD# 09:01.00    0.60    incomprehensibly bad deal with Iran
-  #TBD# 13:22.00    0.60    To counter Iran
-  #TBD# 13:35.00    0.60    I declined to certify the Iran Deal to Congress
+  # 09:01.49    0.60    incomprehensibly bad deal with Iran
+  # 13:22.56    1.02    To counter Iran
+  # 13:35.30    0.55    I declined to certify the Iran Deal to Congress
 
 * video/2018-01-26-address-world-economic-forum.mp4
 
