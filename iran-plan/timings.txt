@@ -2,25 +2,25 @@
 
   # 00:19.50    5.27    He said I wanted to attack Iran
 ### Use 00:23.88    0.99 for just the word "Iran" from above)
-  01:24.30    2.17    he wanted to attack Iran
+  # 01:24.30    2.17    he wanted to attack Iran
 
 * video/2017-02-28-address-joint-session-congress.mp4
 
-  # 17:51.99    0.68    who support Iran's ballistic missile program
+  # 17:51.99    0.71    who support Iran's ballistic missile program
 
 * video/2017-09-19-address-united-nations-general-assembly.mp4
 
-  # 17:31.00    0.70    in this room.  The Iranian government masks
-  # 17:57.00    0.70    The longest-suffering victims of Iran’s leaders are
-  # 18:05.00    0.70    Rather than use its resources to improve Iranian lives
-  # 18:23.00    0.70    which rightly belongs to Iran’s people
-  # 19:08.00    0.70    The Iran Deal was one of the worst
-  # 19:31.00    0.70    join us in demanding that Iran’s government
-  # 19:47.00    0.70    above all, Iran’s government
-  # 20:00.00    0.70    good people of Iran want change
-  # 20:08.00    0.70    that Iran’s
-  # 20:45.00    0.70    will the Iranian people
-  # 21:00.00    0.70    The Iranian regime’s support for terror
+  #TBD# 17:31.00    0.70    in this room.  The Iranian government masks
+  #TBD# 17:57.00    0.70    The longest-suffering victims of Iran’s leaders are
+  #TBD# 18:05.00    0.70    Rather than use its resources to improve Iranian lives
+  #TBD# 18:23.00    0.70    which rightly belongs to Iran’s people
+  #TBD# 19:08.00    0.70    The Iran Deal was one of the worst
+  #TBD# 19:31.00    0.70    join us in demanding that Iran’s government
+  #TBD# 19:47.00    0.70    above all, Iran’s government
+  #TBD# 20:00.00    0.70    good people of Iran want change
+  #TBD# 20:08.00    0.70    that Iran’s
+  #TBD# 20:45.00    0.70    will the Iranian people
+  #TBD# 21:00.00    0.70    The Iranian regime’s support for terror
 
   ### NOTE: ERROR IN TRANSCRIPT: "the day will come when the [then the
   ### transcript has the word 'Iranian' here, but that word is not
@@ -28,126 +28,126 @@
 
 * video/2017-12-18-remarks-national-security-strategy.mp4
 
-  # 09:01.00    0.70    incomprehensibly bad deal with Iran
-  # 13:22.00    0.70    To counter Iran
-  # 13:35.00    0.70    I declined to certify the Iran Deal to Congress
+  #TBD# 09:01.00    0.70    incomprehensibly bad deal with Iran
+  #TBD# 13:22.00    0.70    To counter Iran
+  #TBD# 13:35.00    0.70    I declined to certify the Iran Deal to Congress
 
 * video/2018-01-26-address-world-economic-forum.mp4
 
-  # 10:17.00    0.70    confront Iran’s support for terrorists
-  # 10:20.00    0.70    and block Iran’s path to a nuclear weapon.
+  #TBD# 10:17.00    0.70    confront Iran’s support for terrorists
+  #TBD# 10:20.00    0.70    and block Iran’s path to a nuclear weapon.
 
 * video/2018-01-30-state-union-address.mp4
 
-  # 1:07:26.00  0.70    When the people of Iran rose up
-  # 1:07:37.00  0.70    stands with the people of Iran
-  # 1:08:01.00  0.70    terrible Iran nuclear deal
+  #TBD# 1:07:26.00  0.70    When the people of Iran rose up
+  #TBD# 1:07:37.00  0.70    stands with the people of Iran
+  #TBD# 1:08:01.00  0.70    terrible Iran nuclear deal
 
 * audio/2018-02-23-remarks-conservative-political-action.mp3
 
-  # 25:15.00    0.70    terrible one-sided Iran nuclear deal  (NOTE: AUDIO ONLY)
+  #TBD# 25:15.00    0.70    terrible one-sided Iran nuclear deal  (NOTE: AUDIO ONLY)
 
 * video/2018-07-24-speech-veterans-foreign-wars-national-convention.mp4
 
-  # 12:47.00    0.70    horrible one-sided Iran nuclear
-  # 12:57.00    0.70    And Iran is not the same country anymore
+  #TBD# 12:47.00    0.70    horrible one-sided Iran nuclear
+  #TBD# 12:57.00    0.70    And Iran is not the same country anymore
 
 * video/2018-09-25-address-73rd-session-united-nations-general.mp4
 
-  # 09:42.00    0.70    the corrupt dictatorship in Iran.
-  # 09:44.00    0.70    Iran’s leaders
-  # 10:00.00    0.70    Instead, Iran's leaders plunder
-  # 10:14.00    0.70    The Iranian people are
-  # 10:21.00    0.70    dollars from Iran’s treasury
-  # 10:38.00    0.70    Iran’s neighbors have paid
-  # 10:59.00    0.70    2015 Iran Nuclear Deal and
-  # 11:07.00    0.70    The Iran deal
-  # 11:11.00    0.70    windfall for Iran’s leaders
-  # 11:15.00    0.70    Iran’s military budget
-  # 11:58.00    0.70    under the Iran deal
-  # 12:08.00    0.70    import Iranian crude oil
-  # 12:44.00    0.70    isolate Iran’s regime
-  # 12:52.00    0.70    support Iran’s people
+  #TBD# 09:42.00    0.70    the corrupt dictatorship in Iran.
+  #TBD# 09:44.00    0.70    Iran’s leaders
+  #TBD# 10:00.00    0.70    Instead, Iran's leaders plunder
+  #TBD# 10:14.00    0.70    The Iranian people are
+  #TBD# 10:21.00    0.70    dollars from Iran’s treasury
+  #TBD# 10:38.00    0.70    Iran’s neighbors have paid
+  #TBD# 10:59.00    0.70    2015 Iran Nuclear Deal and
+  #TBD# 11:07.00    0.70    The Iran deal
+  #TBD# 11:11.00    0.70    windfall for Iran’s leaders
+  #TBD# 11:15.00    0.70    Iran’s military budget
+  #TBD# 11:58.00    0.70    under the Iran deal
+  #TBD# 12:08.00    0.70    import Iranian crude oil
+  #TBD# 12:44.00    0.70    isolate Iran’s regime
+  #TBD# 12:52.00    0.70    support Iran’s people
 
 * video/2019-02-05-state-union-address.mp4
 
-  # 1:08:52.00  0.70    the radical regime in Iran.
+  #TBD# 1:08:52.00  0.70    the radical regime in Iran.
   ### NOTE: TRANSCRIPT IS MISSING THESE WORDS HERE: "It is a radical regime.  They do bad, bad things."
-  # 1:09:10.00  0.70    disastrous Iran nuclear deal
+  #TBD# 1:09:10.00  0.70    disastrous Iran nuclear deal
 
 * video/2019-09-24-remarks-united-nations-general-assembly.mp4
 
-  # 12:42.00    0.70    repressive regime in Iran
-  # 12:52.00    0.70    Not only is Iran the world’s
-  # 12:56.00    0.70    but Iran’s leaders are fueling
-  # 13:19.00    0.70    To stop Iran’s path
-  # 13:24.00    0.70    terrible Iran nuclear deal
-  # 14:00.00    0.70    response to Iran’s recent attack
-  # 14:08.00    0.70    sanctions on Iran’s central bank
-  # 14:21.00    0.70    subsidize Iran’s bloodlust
-  # 14:25.00    0.70    as long as Iran’s menacing behavior
-  # 14:34.00    0.70    Iran’s leaders will
-  # 14:56.00    0.70    listened to Iran’s rulers
-  # 16:18.00    0.70    Iran’s citizens deserve
-  # 16:37.00    0.70    for Iran’s leaders to step forward
-  # 16:51.00    0.70    time for Iran’s leaders to finally
-  # 16:55.00    0.70    put the Iranian people first.
-  # 17:43.00    0.70    like Iran, his country is 
+  #TBD# 12:42.00    0.70    repressive regime in Iran
+  #TBD# 12:52.00    0.70    Not only is Iran the world’s
+  #TBD# 12:56.00    0.70    but Iran’s leaders are fueling
+  #TBD# 13:19.00    0.70    To stop Iran’s path
+  #TBD# 13:24.00    0.70    terrible Iran nuclear deal
+  #TBD# 14:00.00    0.70    response to Iran’s recent attack
+  #TBD# 14:08.00    0.70    sanctions on Iran’s central bank
+  #TBD# 14:21.00    0.70    subsidize Iran’s bloodlust
+  #TBD# 14:25.00    0.70    as long as Iran’s menacing behavior
+  #TBD# 14:34.00    0.70    Iran’s leaders will
+  #TBD# 14:56.00    0.70    listened to Iran’s rulers
+  #TBD# 16:18.00    0.70    Iran’s citizens deserve
+  #TBD# 16:37.00    0.70    for Iran’s leaders to step forward
+  #TBD# 16:51.00    0.70    time for Iran’s leaders to finally
+  #TBD# 16:55.00    0.70    put the Iranian people first.
+  #TBD# 17:43.00    0.70    like Iran, his country is 
 
 * video/2019-09-25-press-conference.mp4
 
-  # 20:38.00    0.70    and Iranian dictatorships
+  #TBD# 20:38.00    0.70    and Iranian dictatorships
 
 * video/2020-01-03-remarks-killing-qasem-soleimani.mp4
 
-  # 02:14.00    0.70    protestors in Iran
-  # 02:33.00    0.70    respect for the Iranian people
-  # 02:43.00    0.70    the Iranian regime’s aggression
-  # 02:56.00    0.70    belongs to the people of Iran
-  # 03:34.00    0.70    refers to Iran
+  #TBD# 02:14.00    0.70    protestors in Iran
+  #TBD# 02:33.00    0.70    respect for the Iranian people
+  #TBD# 02:43.00    0.70    the Iranian regime’s aggression
+  #TBD# 02:56.00    0.70    belongs to the people of Iran
+  #TBD# 03:34.00    0.70    refers to Iran
 
 * video/2020-01-08-statement-iran.mp4
 
-  # 00:04.00    0.70    Iran will never be allowed
-  # 00:26.00    0.70    by the Iranian regime
-  # 00:45.00    0.70    Iran appears to be
-  # 01:23.00    0.70    tolerated Iran’s destructive
-  # 01:31.00    0.70    Iran has been the 
-  # 03:07.00    0.70    American and Iranian blood
-  # 03:26.00    0.70    response to Iranian aggression
-  # 03:34.00    0.70    sanctions on the Iranian regime
-  # 03:40.00    0.70    until Iran changes its behavior.
-  # 03:45.00    0.70    Iran has seized ships
-  # 03:56.00    0.70    Iran’s hostilities substantially increased
-  # 03:59.00    0.70    foolish Iran nuclear deal
-  # 04:24.00    0.70    Iran went on a terror spree
-  # 05:01.00    0.70    all throughout Iran.
-  # 05:10.00    0.70    gives Iran a clear and quick
-  # 05:15.00    0.70    Iran must abandon its nuclear ambitions
-  # 05:36.00    0.70    remnants of the Iran deal
-  # 05:43.00    0.70    deal with Iran that makes
-  # 05:51.00    0.70    allows Iran to thrive and prosper
-  # 05:58.00    0.70    Iran can be a great country.
-  # 06:05.00    0.70    Iran continues to foment violence
-  # 06:15.00    0.70    unified message to the Iranian regime
-  # 08:36.00    0.70    ISIS is natural enemy of Iran
-  # 08:40.00    0.70    destruction of ISIS is good for Iran
-  # 08:51.00    0.70    to the people and leaders of Iran
+  #TBD# 00:04.00    0.70    Iran will never be allowed
+  #TBD# 00:26.00    0.70    by the Iranian regime
+  #TBD# 00:45.00    0.70    Iran appears to be
+  #TBD# 01:23.00    0.70    tolerated Iran’s destructive
+  #TBD# 01:31.00    0.70    Iran has been the 
+  #TBD# 03:07.00    0.70    American and Iranian blood
+  #TBD# 03:26.00    0.70    response to Iranian aggression
+  #TBD# 03:34.00    0.70    sanctions on the Iranian regime
+  #TBD# 03:40.00    0.70    until Iran changes its behavior.
+  #TBD# 03:45.00    0.70    Iran has seized ships
+  #TBD# 03:56.00    0.70    Iran’s hostilities substantially increased
+  #TBD# 03:59.00    0.70    foolish Iran nuclear deal
+  #TBD# 04:24.00    0.70    Iran went on a terror spree
+  #TBD# 05:01.00    0.70    all throughout Iran.
+  #TBD# 05:10.00    0.70    gives Iran a clear and quick
+  #TBD# 05:15.00    0.70    Iran must abandon its nuclear ambitions
+  #TBD# 05:36.00    0.70    remnants of the Iran deal
+  #TBD# 05:43.00    0.70    deal with Iran that makes
+  #TBD# 05:51.00    0.70    allows Iran to thrive and prosper
+  #TBD# 05:58.00    0.70    Iran can be a great country.
+  #TBD# 06:05.00    0.70    Iran continues to foment violence
+  #TBD# 06:15.00    0.70    unified message to the Iranian regime
+  #TBD# 08:36.00    0.70    ISIS is natural enemy of Iran
+  #TBD# 08:40.00    0.70    destruction of ISIS is good for Iran
+  #TBD# 08:51.00    0.70    to the people and leaders of Iran
 
 * video/2020-02-04-state-union-address.mp4
 
-  # 1:07:56.00  0.70    was the Iranian regime’s most
-  # 1:09:16.00  0.70    proud Iranians raise their voices
-  # 1:09:20.00  0.70    The Iranian regime must abandon
-  # 1:09:33.00  0.70    the Iranian economy is doing
+  #TBD# 1:07:56.00  0.70    was the Iranian regime’s most
+  #TBD# 1:09:16.00  0.70    proud Iranians raise their voices
+  #TBD# 1:09:20.00  0.70    The Iranian regime must abandon
+  #TBD# 1:09:33.00  0.70    the Iranian economy is doing
 
 * video/2020-06-20-campaign-rally-tulsa-oklahoma.mp4
 
-  # 1:06:56.00  0.70    Iran wants him to win  
-  # 1:07:13.00  0.70    if I lose. Iran. President Obama  (NOTE: very emphatically pronounced -- good one)
-  # 1:07:43.00  0.70    Iran wants to make a deal
+  #TBD# 1:06:56.00  0.70    Iran wants him to win  
+  #TBD# 1:07:13.00  0.70    if I lose. Iran. President Obama  (NOTE: very emphatically pronounced -- good one)
+  #TBD# 1:07:43.00  0.70    Iran wants to make a deal
 
 * video/2021-01-19-farewell-address.mp4
 
-  # 11:29.00    0.70    oppressive Iranian regime
-  # 11:32.00    0.70    Iranian butcher
+  #TBD# 11:29.00    0.70    oppressive Iranian regime
+  #TBD# 11:32.00    0.70    Iranian butcher
