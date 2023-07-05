@@ -1,26 +1,26 @@
 * audio/2021-07-21-trump-bedminster-audio.mp3
 
-  # 00:19.50    5.27    He said I wanted to attack Iran
+  #DONE# 00:19.50    5.27    He said I wanted to attack Iran
 ### Use 00:23.88    0.99 for just the word "Iran" from above)
-  # 01:24.30    2.17    he wanted to attack Iran
+  #DONE# 01:24.30    2.17    he wanted to attack Iran
 
 * video/2017-02-28-address-joint-session-congress.mp4
 
-  # 17:51.99    0.71    who support Iran's ballistic missile program
+  #DONE# 17:51.99    0.71    who support Iran's ballistic missile program
 
 * video/2017-09-19-address-united-nations-general-assembly.mp4
 
-  # 17:31.98    0.93    in this room.  The Iranian government masks
-  # 17:57.65    0.53    victims of Iran’s leaders are
-  # 18:05.80    0.53    Rather than use its resources to improve Iranian lives
-  # 18:23.40    0.56    which rightly belongs to Iran’s people
-  # 19:07.82    0.49    The Iran Deal was one of the worst
-  # 19:31.70    0.60    join us in demanding that Iran’s government
-  # 19:47.35    0.46    above all, Iran’s government
-  # 20:00.95    0.51    good people of Iran want change
-  # 20:08.18    0.67    that Iran’s
-  # 20:45.27    0.71    will the Iranian people
-  # 21:00.73    0.60    The Iranian regime’s support for terror
+  #DONE# 17:31.98    0.93    in this room.  The Iranian government masks
+  #DONE# 17:57.65    0.53    victims of Iran’s leaders are
+  #DONE# 18:05.80    0.53    Rather than use its resources to improve Iranian lives
+  #DONE# 18:23.40    0.56    which rightly belongs to Iran’s people
+  #DONE# 19:07.82    0.49    The Iran Deal was one of the worst
+  #DONE# 19:31.70    0.60    join us in demanding that Iran’s government
+  #DONE# 19:47.35    0.46    above all, Iran’s government
+  #DONE# 20:00.95    0.51    good people of Iran want change
+  #DONE# 20:08.18    0.67    that Iran’s
+  #DONE# 20:45.27    0.71    will the Iranian people
+  #DONE# 21:00.73    0.60    The Iranian regime’s support for terror
 
   ### NOTE: ERROR IN TRANSCRIPT: "the day will come when the [then the
   ### transcript has the word 'Iranian' here, but that word is not
@@ -28,20 +28,20 @@
 
 * video/2017-12-18-remarks-national-security-strategy.mp4
 
-  # 09:01.49    0.60    incomprehensibly bad deal with Iran
-  # 13:22.56    1.02    To counter Iran
-  # 13:35.30    0.55    I declined to certify the Iran Deal to Congress
+  #DONE# 09:01.49    0.60    incomprehensibly bad deal with Iran
+  #DONE# 13:22.56    1.02    To counter Iran
+  #DONE# 13:35.30    0.55    I declined to certify the Iran Deal to Congress
 
 * video/2018-01-26-address-world-economic-forum.mp4
 
-  #TBD# 10:17.00    0.60    confront Iran’s support for terrorists
-  #TBD# 10:20.00    0.60    and block Iran’s path to a nuclear weapon.
+  #DONE# 10:17.18    0.50    confront Iran’s support for terrorists
+  #DONE# 10:19.90    0.69    and block Iran’s path to a nuclear weapon.
 
 * video/2018-01-30-state-union-address.mp4
 
-  #TBD# 1:07:26.00  0.60    When the people of Iran rose up
-  #TBD# 1:07:37.00  0.60    stands with the people of Iran
-  #TBD# 1:08:01.00  0.60    terrible Iran nuclear deal
+  #DONE# 1:07:26.10  0.51    When the people of Iran rose up
+  #DONE# 1:07:37.07  0.65    stands with the people of Iran
+  #DONE# 1:08:00.53  1.72    terrible Iran nuclear deal  (NOTE: emphatically pronounced -- good stop)
 
 * audio/2018-02-23-remarks-conservative-political-action.mp3
 
