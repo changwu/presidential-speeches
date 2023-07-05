@@ -38,11 +38,11 @@
 
 * video/2018-01-30-state-union-address.mp4
 
-  67:26.00    0.70    When the people of Iran rose up
-  67:37.00    0.70    stands with the people of Iran
-  68:01.00    0.70    terrible Iran nuclear deal
+  1:07:26.00  0.70    When the people of Iran rose up
+  1:07:37.00  0.70    stands with the people of Iran
+  1:08:01.00  0.70    terrible Iran nuclear deal
 
-* video/2018-02-23-remarks-conservative-political-action.mp4
+* audio/2018-02-23-remarks-conservative-political-action.mp3
 
   25:15.00    0.70    terrible one-sided Iran nuclear deal  (NOTE: AUDIO ONLY)
 
@@ -70,9 +70,9 @@
 
 * video/2019-02-05-state-union-address.mp4
 
-  68:52.00    0.70    the radical regime in Iran.
+  1:08:52.00  0.70    the radical regime in Iran.
   # NOTE: TRANSCRIPT IS MISSING THESE WORDS HERE: "It is a radical regime.  They do bad, bad things."
-  69:10.00    0.70    disastrous Iran nuclear deal
+  1:09:10.00  0.70    disastrous Iran nuclear deal
 
 * video/2019-09-24-remarks-united-nations-general-assembly.mp4
 
@@ -135,16 +135,16 @@
 
 * video/2020-02-04-state-union-address.mp4
 
-  67:56.00    0.70    was the Iranian regime’s most
-  69:16.00    0.70    proud Iranians raise their voices
-  69:20.00    0.70    The Iranian regime must abandon
-  69:33.00    0.70    the Iranian economy is doing
+  1:07:56.00  0.70    was the Iranian regime’s most
+  1:09:16.00  0.70    proud Iranians raise their voices
+  1:09:20.00  0.70    The Iranian regime must abandon
+  1:09:33.00  0.70    the Iranian economy is doing
 
 * video/2020-06-20-campaign-rally-tulsa-oklahoma.mp4
 
-  66:56.00    0.70    Iran wants him to win  
-  67:13.00    0.70    if I lose. Iran. President Obama  (NOTE: very emphatically pronounced -- good one)
-  67:43.00    0.70    Iran wants to make a deal
+  1:06:56.00  0.70    Iran wants him to win  
+  1:07:13.00  0.70    if I lose. Iran. President Obama  (NOTE: very emphatically pronounced -- good one)
+  1:07:43.00  0.70    Iran wants to make a deal
 
 * video/2021-01-19-farewell-address.mp4
 
