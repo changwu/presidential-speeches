@@ -102,27 +102,8 @@ def get_schedule(infile):
     Pythonic thing of all?  Shipping."""
     fp = open(infile, "r")
     ret_list = []
+    this_source = None
     this_elt = None
-
-    # TODO: There's a bug in this parser; this old output makes it clear:
-    #
-    #   item: ['audio/trump-bedminster-2021-07-audio.mp3', '00:24.00', '0.70', '01:25.00', '0.70']
-    #   item: ['video/2017-02-28-address-joint-session-congress.mp4', '17:51.99', '0.68']
-    #   item: ['video/2017-09-19-address-united-nations-general-assembly.mp4', '17:31.00', '0.70', '17:57.00', '0.70', '18:05.00', '0.70', '18:23.00', '0.70', '19:08.00', '0.70', '19:31.00', '0.70', '19:47.00', '0.70', '20:00.00', '0.70', '20:08.00', '0.70', '20:45.00', '0.70', '21:00.00', '0.70']
-    #   item: ['video/2017-12-18-remarks-national-security-strategy.mp4', '09:01.00', '0.70', '13:22.00', '0.70', '13:35.00', '0.70']
-    #   item: ['video/2018-01-26-address-world-economic-forum.mp4', '10:17.00', '0.70', '10:20.00', '0.70']
-    #   item: ['video/2018-01-30-state-union-address.mp4', '67:26.00', '0.70', '67:37.00', '0.70', '68:01.00', '0.70']
-    #   item: ['video/2018-02-23-remarks-conservative-political-action.mp4', '25:15.00', '0.70']
-    #   item: ['video/2018-07-24-speech-veterans-foreign-wars-national-convention.mp4', '12:47.00', '0.70', '12:57.00', '0.70']
-    #   item: ['video/2018-09-25-address-73rd-session-united-nations-general.mp4', '09:42.00', '0.70', '09:44.00', '0.70', '10:00.00', '0.70', '10:14.00', '0.70', '10:21.00', '0.70', '10:38.00', '0.70', '10:59.00', '0.70', '11:07.00', '0.70', '11:11.00', '0.70', '11:15.00', '0.70', '11:58.00', '0.70', '12:08.00', '0.70', '12:44.00', '0.70', '12:52.00', '0.70']
-    #   item: ['video/2019-02-05-state-union-address.mp4', '68:52.00', '0.70', '69:10.00', '0.70']
-    #   item: ['video/2019-09-24-remarks-united-nations-general-assembly.mp4', '12:42.00', '0.70', '12:52.00', '0.70', '12:56.00', '0.70', '13:19.00', '0.70', '13:24.00', '0.70', '14:00.00', '0.70', '14:08.00', '0.70', '14:21.00', '0.70', '14:25.00', '0.70', '14:34.00', '0.70', '14:56.00', '0.70', '16:18.00', '0.70', '16:37.00', '0.70', '16:51.00', '0.70', '16:55.00', '0.70', '17:43.00', '0.70']
-    #   item: ['video/2019-09-25-press-conference.mp4', '20:38.00', '0.70']
-    #   item: ['video/2020-01-03-remarks-killing-qasem-soleimani.mp4', '02:14.00', '0.70', '02:33.00', '0.70', '02:43.00', '0.70', '02:56.00', '0.70', '03:34.00', '0.70']
-    #   item: ['video/2020-01-08-statement-iran.mp4', '00:04.00', '0.70', '00:26.00', '0.70', '00:45.00', '0.70', '01:23.00', '0.70', '01:31.00', '0.70', '03:07.00', '0.70', '03:26.00', '0.70', '03:34.00', '0.70', '03:40.00', '0.70', '03:45.00', '0.70', '03:56.00', '0.70', '03:59.00', '0.70', '04:24.00', '0.70', '05:01.00', '0.70', '05:10.00', '0.70', '05:15.00', '0.70', '05:36.00', '0.70', '05:43.00', '0.70', '05:51.00', '0.70', '05:58.00', '0.70', '06:05.00', '0.70', '06:15.00', '0.70', '08:36.00', '0.70', '08:40.00', '0.70', '08:51.00', '0.70']
-    #   item: ['video/2020-02-04-state-union-address.mp4', '67:56.00', '0.70', '69:16.00', '0.70', '69:20.00', '0.70', '69:33.00', '0.70']
-    #   item: ['video/2020-06-20-campaign-rally-tulsa-oklahoma.mp4', '66:56.00', '0.70', '67:13.00', '0.70', '67:43.00', '0.70']
-    #   item: ['video/2021-01-19-farewell-address.mp4', '11:29.00', '0.70', '11:32.00', '0.70']
 
     for line in fp:
         line = line.rstrip()
@@ -133,18 +114,15 @@ def get_schedule(infile):
         # perspective, I understand why this is, but from a source
         # code readability perspective, it's a pity.  Ah well.
         if (m := SOURCE_RE.match(line)) is not None:
-            this_elt = [m.group(1),]
-            ret_list.append(this_elt)
+            this_source = m.group(1)
         elif (m := TIMING_RE.match(line)) is not None:
-            this_elt.append(m.group(1))
-            this_elt.append(m.group(2))
+            ret_list.append([this_source, m.group(1), m.group(2),])
         elif (m := COMMENT_RE.match(line)) is not None:
             pass
         elif (m := BLANK_LINE_RE.match(line)) is not None:
             pass
         else:
-            sys.stderr.write("WARNING: Invalid line seen in input:\n")
-            sys.stderr.write(f"        '{line}'\n")
+            sys.stderr.write(f"WARNING: Invalid line seen in input: '{line}'\n")
     return ret_list
 
 
@@ -176,11 +154,11 @@ def main():
     schedule = get_schedule(infile_name)
 
     count = 0
-    width = round(math.log(len(schedule), 10))
+    width = len(str(len(schedule)))
     for item in schedule:
         count += 1
         source, timing, duration, = item
-        output_name = f"{count}-{timing.replace(':', '_')}-{duration}-{os.path.basename(source)}"
+        output_name = f"{str(count).zfill(width)}-{timing.replace(':', '_')}-{duration}-{os.path.basename(source)}"
         print(f"output: {output_name}")
         # ffmpeg -ss 00:17:51.99 -t 0.68 -i video/2017-02-28-address-joint-session-congress.mp4 -map 0 -c copy tmp.mp4
 
