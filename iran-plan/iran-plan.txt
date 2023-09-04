@@ -1,3 +1,12 @@
+# Quick start
+
+Run these commands:
+
+  $ ./fetch-videos -i list-of-trump-speeches-mentioning-iran.txt
+  $ ./assemble.sh
+
+# Longer explanation
+
 List of places where Donald Trump says the word "Iran" in his
 speeches.  I want to compare his pronounciation in these public
 speeches with his pronounciation of that word twice (first at ~24s) in

@@ -1,6 +1,14 @@
 #!/bin/sh
 
-./extract-snippets -i timings.txt > output_name.tmp; vlc --play-and-exit snippets/`cat output_name.tmp`
+./extract-snippets -i timings.txt > output_names.tmp
+
+rm output_names.tmp.tmp
+for output_name in $(cat output_names.tmp); do
+  printf "snippets/%s\n" "${output_name}" >> output_names.tmp.tmp
+done
+mv output_names.tmp.tmp output_names.tmp
+
+vlc --play-and-exit $(cat output_names.tmp)
 
 # Concatenate all extracts so far and play the result.
 # 
